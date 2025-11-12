@@ -4,6 +4,7 @@ import { User } from "../models/user.js";
 
 export const authRequired = (req, res, next)=>{
     const authHeaders = req.cookies.jwt_token;
+    console.log(req.cookies);
 
     if (!authHeaders?.startsWith("Bearer ")){
         return res.status(401).json({message:"No token provided"}) 
