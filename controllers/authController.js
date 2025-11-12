@@ -47,7 +47,8 @@ export const login = async (req, res) => {
 
     res.cookie('jwt_token', `Bearer ${token}`, {
         httpOnly: true,
-        // sameSite: 'Strict',
+        sameSite: 'None',
+        secure:true,
         maxAge: 24 * 60 * 60 * 1000,
         
         
